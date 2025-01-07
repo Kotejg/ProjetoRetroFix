@@ -1,7 +1,10 @@
 package br.com.retrogames.repository;
 
-import org.springframework.stereotype.Service;
+import br.com.retrogames.dto.UsuarioEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-@Service
-public class UsuarioRepository {
+
+@Repository
+public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Long> {
 }
