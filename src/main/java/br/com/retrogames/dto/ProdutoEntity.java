@@ -5,6 +5,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "produto")
 @Data
@@ -14,5 +16,10 @@ import lombok.*;
 @ToString
 public class ProdutoEntity {
     @Id
-    private int idPedido;
+    private Long idProduto;
+    private String descricao;
+    private BigDecimal vlProduto;
+    private boolean flDisponivel;
+    private Long qtdEstoque;
+
 }

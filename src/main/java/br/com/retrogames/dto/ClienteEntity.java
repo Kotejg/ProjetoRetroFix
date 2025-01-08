@@ -17,7 +17,7 @@ import java.util.Date;
 public class ClienteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCliente;
+    private Long idCliente;
     private String nmCliente;
     private String telefone;
     @Column(name = "data_nasc")

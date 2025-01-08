@@ -1,8 +1,6 @@
 package br.com.retrogames.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -14,7 +12,13 @@ import lombok.*;
 @ToString
 public class UsuarioEntity  {
     @Id
-    private int idPedido;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idUsuario;
+    private String username;
+    @Column(name = "senha")
+    private String password;
+    private boolean flAdm;
+    private Long idCliente;
 
 
 }

@@ -1,23 +1,21 @@
 package br.com.retrogames.dto;
 
+
+import br.com.retrogames.dto.pk.ItemPedidoPK;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
 @Entity
-@Table(name = "orcamento")
+@Table(name = "item_pedido")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @ToString
-public class TriagemEntity {
-    @Id
-    private Long idOrcamento;
-    private Long idCliente;
-    private String nmVideoGame;
-    private String dsProblema;
-    private String tpServico;
+public class ItemPedidoEntity {
 
+    @Id
+    private ItemPedidoPK id;
 }

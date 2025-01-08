@@ -12,4 +12,7 @@ public class ClienteRequest {
     private String telefone;
     private LocalDate dataNasc;
     private String email;
+
+    private String username;
+    private String password;
 }
