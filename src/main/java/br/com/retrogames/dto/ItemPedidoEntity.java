@@ -18,4 +18,6 @@ public class ItemPedidoEntity {
 
     @Id
     private ItemPedidoPK id;
+    private Long qtdProduto;
+
 }

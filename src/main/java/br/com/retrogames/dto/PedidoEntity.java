@@ -1,12 +1,14 @@
 package br.com.retrogames.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.*;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.ToString;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "pedido")
@@ -17,9 +19,10 @@ import java.util.Date;
 @ToString
 public class PedidoEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPedido;
     private Long idCliente;
-    private Date dt_pedido;
+    private LocalDate dt_pedido;
     private String status_pedido;
     private BigDecimal vlTotal;
 }
