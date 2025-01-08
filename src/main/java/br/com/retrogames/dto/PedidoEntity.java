@@ -17,7 +17,7 @@ import java.util.Date;
 @ToString
 public class PedidoEntity {
     @Id
-    private int idPedido;
+    private Long idPedido;
     private Long idCliente;
     private Date dt_pedido;
     private String status_pedido;

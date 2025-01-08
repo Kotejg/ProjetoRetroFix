@@ -24,6 +24,9 @@ public class TriagemController {
     @GetMapping("{id}")
     public ResponseEntity<TriagemResponse> buscarTriagem(@PathVariable Long id){
         TriagemResponse response = triagemService.buscar(id);
+        if(response == null){
+            return ResponseEntity.notFound().build();
+        }
         return ResponseEntity.ok().body(response);
     }
 

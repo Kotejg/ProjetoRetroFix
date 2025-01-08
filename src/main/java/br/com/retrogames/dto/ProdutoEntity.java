@@ -1,8 +1,6 @@
 package br.com.retrogames.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -15,9 +13,12 @@ import java.math.BigDecimal;
 @Builder
 @ToString
 public class ProdutoEntity {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProduto;
     private String descricao;
+    private String urlImg;
     private BigDecimal vlProduto;
     private boolean flDisponivel;
     private Long qtdEstoque;
