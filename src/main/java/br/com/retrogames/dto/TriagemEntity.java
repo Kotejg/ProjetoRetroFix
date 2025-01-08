@@ -1,8 +1,6 @@
 package br.com.retrogames.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -14,9 +12,10 @@ import lombok.*;
 @ToString
 public class TriagemEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idOrcamento;
     private Long idCliente;
-    private String nmVideoGame;
+    private String nmVideogame;
     private String dsProblema;
     private String tpServico;
 
