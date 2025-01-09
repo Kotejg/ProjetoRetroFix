@@ -6,8 +6,6 @@ import lombok.Data;
 @Data
 @Builder
 public class ItemPedidoRequest {
-
-    private Long idPedido;
     private Long idProduto;
     private Long qtdProduto;
 }

@@ -2,9 +2,7 @@ package br.com.retrogames.dto;
 
 
 import br.com.retrogames.dto.pk.ItemPedidoPK;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -16,8 +14,13 @@ import lombok.*;
 @ToString
 public class ItemPedidoEntity {
 
-    @Id
+    @EmbeddedId
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private ItemPedidoPK id;
     private Long qtdProduto;
+
+    @ManyToOne(fetch=FetchType.EAGER , cascade = CascadeType.ALL)
+    @JoinColumn(name = "idPedido", insertable = false, updatable = false)
+    private PedidoEntity pedidoEntity;
 
 }
