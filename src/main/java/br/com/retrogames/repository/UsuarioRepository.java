@@ -1,6 +1,6 @@
 package br.com.retrogames.repository;
 
-import br.com.retrogames.domain.request.LoginRequest;
+
 import br.com.retrogames.dto.UsuarioEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

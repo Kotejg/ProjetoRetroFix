@@ -31,10 +31,6 @@ public class ProdutoService {
 
     public ProdutoResponse buscarPorId(Long id) {
         Optional<ProdutoEntity> entityResponse = produtoRepository.findById(id);
-//        if(entityResponse.isPresent()) {
-//            return modelMapper.map(entityResponse, ProdutoResponse.class);
-//        }
-//        return null;
         return entityResponse.map(entity -> new ProdutoResponse(entity.getDescricao(),
                 entity.getVlProduto(),
                 entity.isFlDisponivel(),

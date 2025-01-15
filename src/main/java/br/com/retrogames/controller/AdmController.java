@@ -23,3 +23,15 @@ public class AdmController {
         return ResponseEntity.ok(response);
     }
 }
+/*
+* AdmController
+*
+* --------------------
+* LoginService loginService;
+*
+* ----------------------
+*  cadastroAdm(oginRequest)
+*
+*
+*
+* */
