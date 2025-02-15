@@ -1,0 +1,157 @@
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #a3e635;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+
+}
+
+.cart {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 350px;
+    height: 100vh;
+    background: #313131;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.cart.active {
+    right: 0;
+}
+
+.cart-header {
+    background-color: #a3e635;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+
+}
+
+.cart-header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+#close-cart {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+/* ---------------------------------------------- */
+/* Nome do item maior e em evidência */
+.cart-item-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+/* Preço do item maior */
+.cart-item-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #a3e635;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+}
+
+.cart-item-controls button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #231f1c;
+    background: #a3e635;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Estilização do input de quantidade */
+.cart-item-controls input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #a3e635;
+    background: #f0f0f0;
+    color: #231f1c;
+}  
+
+/* Contêiner que organiza os botões de quantidade e remover */
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribui os itens na linha */
+    width: 100%;
+}
+/* Mantém os botões de quantidade próximos */
+.cart-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Ajusta o botão remover para ficar à direita */
+.cart-item-controls .remove-item {
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    width: 80px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Remover a imagem do item */
+.cart-item-image {
+    display: none;
+}
+
+/* ---------------------------------------------- */
+
+.cart-footer {
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 10px;
+    background: #a3e635;
+    color: #231f1c;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.checkout-btn:hover {
+    background: #94da24;
+}
+

@@ -2,12 +2,14 @@ package br.com.retrogames.controller;
 
 import br.com.retrogames.domain.request.ProdutoRequest;
 import br.com.retrogames.domain.response.ProdutoResponse;
+import br.com.retrogames.dto.ProdutoEntity;
 import br.com.retrogames.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/produto")
@@ -16,9 +18,14 @@ public class ProdutoController {
     private ProdutoService produtoService;
 
     @PostMapping("novo")
-    public ResponseEntity<ProdutoResponse> cadastroProduto(@RequestBody ProdutoRequest produtoRequest) {
-        ProdutoResponse response = produtoService.cadastrar(produtoRequest);
-        return ResponseEntity.ok().body(response);
+    public ResponseEntity<Object> cadastroProduto(@RequestBody ProdutoRequest produtoRequest) {
+        try {
+            ProdutoResponse response = produtoService.cadastrar(produtoRequest);
+            return ResponseEntity.ok().body(response);
+        } catch (Exception e ){
+            e.printStackTrace();
+        }
+        return   ResponseEntity.badRequest().body("Erro ao cadastrar/ produto ja cadastrado");
     }
 
     @GetMapping("{id}")
